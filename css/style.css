@@ -1,0 +1,71 @@
+header{
+    text-align: center;
+    font-family: 'Rock Salt', cursive; 
+    font-size: 15px;
+    color:red; 
+    line-height: 1.7em;
+}
+
+.characterSelectBox{ 
+    text-align: center; 
+}
+
+#scorpion{
+    width: 260px;
+    height: auto;
+    text-align:center;
+    border: 3px solid black; 
+
+
+}
+
+#subZero{
+    width: 300px;
+    height: auto;
+    text-align: center;
+    border: 3px solid black; 
+
+} 
+
+#liuKang{
+    width: 320px;
+    height: auto; 
+    text-align: center;
+    border: 3px solid black; 
+
+}
+
+.menu{
+    background-image:url("../img/Menu.jpg");
+    background-size:cover; 
+}
+
+.fight{
+    background-image:url("../img/fight.png"); 
+    background-size: cover; 
+}
+
+.actionSelector{
+    text-align: center;
+    border: 1px solid red; 
+    width: 15em;
+    float: left; 
+    margin-top: 20vh;
+    display: none;
+}
+
+.actionSelectorTwo{ 
+    text-align: center; 
+    border: 1px solid red; 
+    width: 15em;
+    float: right;
+    margin-top: 20vh;
+    display: none;
+}
+
+.Health{
+    vertical-align: top; 
+    font-family: 'Rock Salt', cursive; 
+    color: white;
+    display: none; 
+}
