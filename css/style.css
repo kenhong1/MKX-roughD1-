@@ -6,15 +6,23 @@ header{
     line-height: 1.7em;
 }
 
+
+
+
 .characterSelectBox{ 
     text-align: center; 
+    /* position: absolute; */
 }
 
+.characterSelectBox div{
+    display: inline-block;
+}
+
+
 #scorpion{
-    width: 260px;
+    width: 270px;
     height: auto;
     text-align:center;
-    border: 3px solid black; 
 
 
 }
@@ -23,7 +31,7 @@ header{
     width: 300px;
     height: auto;
     text-align: center;
-    border: 3px solid black; 
+    
 
 } 
 
@@ -31,7 +39,7 @@ header{
     width: 320px;
     height: auto; 
     text-align: center;
-    border: 3px solid black; 
+    
 
 }
 
@@ -49,23 +57,47 @@ header{
     text-align: center;
     border: 1px solid red; 
     width: 15em;
-    float: left; 
+    /* float: left;  */
     margin-top: 20vh;
-    display: none;
+    display: inline-block;
 }
 
 .actionSelectorTwo{ 
     text-align: center; 
     border: 1px solid red; 
     width: 15em;
-    float: right;
+    /* float: right; */
     margin-top: 20vh;
-    display: none;
+    display: inline-block;
 }
 
 .Health{
     vertical-align: top; 
     font-family: 'Rock Salt', cursive; 
     color: white;
-    display: none; 
+    position: absolute;
 }
+
+#myFighterSelect{
+    width: 25vw;
+    height: 50vh; 
+    display: left;
+    text-align: left;
+    border: 1px solid red;
+}
+#yourFighterSelect{
+    width: 25vw;
+    height: 50vh; 
+    display: left;
+    text-align: left;
+    border: 1px solid red;
+    
+}
+#battleArena{
+    width: 90vw; 
+    height: 50vh;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+}
+
