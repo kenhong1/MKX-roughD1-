@@ -23,24 +23,21 @@ header{
     width: 270px;
     height: auto;
     text-align:center;
-
-
+    border: 1px solid blue;
 }
 
 #subZero{
     width: 300px;
     height: auto;
     text-align: center;
-    
-
+    border: 1px solid blue;
 } 
 
 #liuKang{
     width: 320px;
     height: auto; 
     text-align: center;
-    
-
+    border: 1px solid blue;
 }
 
 .menu{
@@ -59,7 +56,7 @@ header{
     width: 15em;
     /* float: left;  */
     margin-top: 20vh;
-    display: inline-block;
+    display: none; 
 }
 
 .actionSelectorTwo{ 
@@ -68,7 +65,7 @@ header{
     width: 15em;
     /* float: right; */
     margin-top: 20vh;
-    display: inline-block;
+    display: none; 
 }
 
 .Health{
@@ -84,6 +81,10 @@ header{
     display: left;
     text-align: left;
     border: 1px solid red;
+    color:white;  
+    font-family: 'Rock Salt', cursive; 
+    font-size: 15px;
+
 }
 #yourFighterSelect{
     width: 25vw;
@@ -91,6 +92,9 @@ header{
     display: left;
     text-align: left;
     border: 1px solid red;
+    color:white;  
+    font-family: 'Rock Salt', cursive; 
+    font-size: 15px;
     
 }
 #battleArena{
@@ -100,4 +104,3 @@ header{
     justify-content: space-around;
     margin: 0 auto;
 }
-

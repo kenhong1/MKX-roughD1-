@@ -1,94 +1,102 @@
 console.log("hello"); 
 
 // ~~~~~~~~~~~~Variables~~~~~~~~~~~~ 
-
+var scoropionFighterObj 
 var scorpionChosen = false; 
 var scorpionFight = null;
 
+var subZeroFigherObj = null; 
 var subZeroChosen = false;
 var subzeroFight = null;
 
+var liukangFighterObj = null; 
 var liukangChosen = false;
 var liukangFight = null;
+
+
 
 var playerOnePick = false;
 var playerTwoPick = false;
 var yourFighter = null;
+var myFighterSelect = null; 
 var characterSelected = []; 
 
 
-// document.getElementById("liukangFighter").addEventListener("click", function(){
-//     if (playerOnePick === false && liukangChosen === false) {
-//         playerOnePick = true; 
-//         document.getElementById("myFighterSelect").appendChild(document.getElementById("liukangFighter"))
-//         liukangChosen = true;  
-//     } 
 
-document.getElementById("liukangFighter").addEventListener("click", function(){
+// liuKang object 
+
+var liukangFighterObj = {
+    Name: "Liu Kang", 
+    Health: 100, 
+    Damage: 30,
+    Block: 25,
+}
+
+
+// subZero Object
+
+var subZeroFighterObj = {
+    Name: "Sub Zero", 
+    Health: 100,
+    Damage: 15, 
+    Block: 35, 
+}
+
+// scorpion 
+
+var scoropionFighterObj = {
+    name: "Scorpion",
+    Health: 100, 
+    Damage: 40, 
+    Block: 20, 
+}
+
+
+
+
+
+
+
+
+
+// liuKang fighter selecter
+document.getElementById("liuKangFighterBox").addEventListener("click", function(){
     if(playerOnePick === false && liukangChosen === false){
         playerOnePick =true;
-            document.getElementById("myFighterSelect").appendChild(document.getElementById("liukangFighter"))
+            document.getElementById("myFighterSelect").appendChild(document.getElementById("liuKangFighterBox"))
             liukangChosen = true; 
     }   else if ( playerOnePick === true && playerTwoPick === false && liukangChosen === false){
-            document.getElementById("yourFighterSelect").appendChild(document.getElementById("liukangFighter"))
+            document.getElementById("yourFighterSelect").appendChild(document.getElementById("liuKangFighterBox"))
             playerTwoPick = true; 
             //  if (playerOnePick === true && playerTwoPick === true && liukangChosen === false){
-            //     document.getElementById("liukangFighter").remove() }
-                
+            //     document.getElementById("liukangFighter").remove()  
     }
         
-    })
-
-    document.getElementById("subZeroFighter").addEventListener("click", function(){
+})
+// subZero fighter selecter
+    document.getElementById("subZeroFighterBox").addEventListener("click", function(){
         if(playerOnePick === false && subZeroChosen === false){
-            playerOnePick =true;
-                document.getElementById("myFighterSelect").appendChild(document.getElementById("subZeroFighter"))
+            playerOnePick = true;
+                document.getElementById("myFighterSelect").appendChild(document.getElementById("subZeroFighterBox"))
                 subZeroChosen = true; 
-        }   else if ( playerOnePick === true && playerTwoPick === false && subZeroChosen === false){
-                document.getElementById("yourFighterSelect").appendChild(document.getElementById("subZeroFighter"))                
+        }   else if (playerOnePick === true && playerTwoPick === false && subZeroChosen === false){
+                document.getElementById("yourFighterSelect").appendChild(document.getElementById("subZeroFighterBox"))                
                 playerTwoPick = true; 
-                
-            }
-            
-        })
-
-        // function removeSubZero(){
-        //     if (playerOnePick === true && playerTwoPick === true && subZeroChosen === false){
-        //         document.getElementById("subZeroFighter").remove() }
-        //     }
-
-        document.getElementById("scorpionFighter").addEventListener("click", function(){
+        }        
+})
+// scoropion Fighter selecter. 
+        document.getElementById("scorpionFighterBox").addEventListener("click", function(){
             if(playerOnePick === false && subZeroChosen === false){
                 playerOnePick =true;
-                    document.getElementById("myFighterSelect").appendChild(document.getElementById("scorpionFighter"))
+                    document.getElementById("myFighterSelect").appendChild(document.getElementById("scorpionFighterBox"))
                     subZeroChosen = true; 
             }   else if ( playerOnePick === true && playerTwoPick === false && subZeroChosen === false){
-                    document.getElementById("yourFighterSelect").appendChild(document.getElementById("scorpionFighter"))                
+                    document.getElementById("yourFighterSelect").appendChild(document.getElementById("scorpionFighterBox"))                
                     playerTwoPick = true; 
                     //  if (playerOnePick === true && playerTwoPick === true && subZeroChosen === false){
                     //     document.getElementById("subZeroFighter").remove() }
-                        
             }
-                
-            })
-        
-    
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+})
 
 
 
