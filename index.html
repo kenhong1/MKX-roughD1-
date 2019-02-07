@@ -31,7 +31,7 @@
 
         <div id = liuKangFighterBox>
         <div id = "liuKangHealth" class = "Health"> 100/100 </div> 
-                <div id="liukangFighter"> <img id = "liuKang"  class ="character" src= "./img/liuKang.png"> </div> 
+                <div id="liukangFighter"> <img id = "liuKang" class ="character" src= "./img/liuKang.png"> </div> 
         </div>
         
         <div id = scorpionFighterBox>
@@ -42,20 +42,21 @@
         <div id = "subZeroHealth" class = "Health"> 100/100 </div> 
                 <div id="subZeroFighter"> <img id = "subZero"  class ="character" src= "./img/Subzero.png"></div>
         </div>
-        
+        <div id="fightText"> FIGHT! </div>
+        <div id="fatalityText"> Fatality </div>
     </div>
 
 
 
     
-    <div class = "actionSelector"> 
-        <button class="melee">Melee</button>
-        <button class="block">Block</button>
+    <div class = "playerOneButtonBox"> 
+        <button id ="playerOneAttack" class="combat">Kombat</button>
+        <button class="playerOneBlock">Block</button>
     </div>
 
-    <div class = "actionSelectorTwo"> 
-        <button class="melee">Melee</button>
-        <button class="block">Block</button>
+    <div class = "playerTwoButtonBox"> 
+        <button class="playerTwoAttack">Kombat</button>
+        <button class="playerTwoBlock">Block</button>
     </div>
 
 </body>

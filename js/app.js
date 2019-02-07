@@ -1,11 +1,11 @@
 console.log("hello"); 
 
 // ~~~~~~~~~~~~Variables~~~~~~~~~~~~ 
-var scoropionFighterObj 
+var scorpionFighterObj= null; 
 var scorpionChosen = false; 
 var scorpionFight = null;
 
-var subZeroFigherObj = null; 
+var subZeroFigtherObj = null; 
 var subZeroChosen = false;
 var subzeroFight = null;
 
@@ -14,47 +14,64 @@ var liukangChosen = false;
 var liukangFight = null;
 
 
-
+var playerOneButton = null; 
 var playerOnePick = false;
 var playerTwoPick = false;
+
 var yourFighter = null;
 var myFighterSelect = null; 
 var characterSelected = []; 
 
 
-
 // liuKang object 
+liukangFighterObj = {
+    name: "Liu Kang", 
+    hp: 100, 
+    damage: 10,
+    block: 100,
+    alive: true,
+    attacks: function (enemy) {
+            enemy.hp -= this.damage
+            console.log("hit")
+    }
+    
+}; 
 
-var liukangFighterObj = {
-    Name: "Liu Kang", 
-    Health: 100, 
-    Damage: 30,
-    Block: 25,
-}
+//enter damage and health buttons. 
+
+document.getElementById('playerOneAttack').addEventListener('click', function() {
+    characterSelected[0].attacks (characterSelected[1]).hp -10
+    console.log("attack"); 
+})
 
 
 // subZero Object
-
-var subZeroFighterObj = {
-    Name: "Sub Zero", 
-    Health: 100,
-    Damage: 15, 
-    Block: 35, 
-}
+subZeroFighterObj = {
+    name: "Sub Zero", 
+    hp: 100,
+    damage: 100, 
+    block: 100, 
+    status: true,
+    attacks: function (enemy) {
+        enemy.hp -= this.damage
+        // console.log("hit")
+    }
+};
 
 // scorpion 
-
-var scoropionFighterObj = {
+scorpionFighterObj = {
     name: "Scorpion",
-    Health: 100, 
-    Damage: 40, 
-    Block: 20, 
+    hp: 100, 
+    damage: 100, 
+    block: 100, 
+    status: true,
+}; 
+
+var fighters = {
+    liuKang: liukangFighterObj,
+    subZero: subZeroFighterObj,
+    scorpion: scorpionFighterObj,
 }
-
-
-
-
-
 
 
 
@@ -71,8 +88,11 @@ document.getElementById("liuKangFighterBox").addEventListener("click", function(
             //  if (playerOnePick === true && playerTwoPick === true && liukangChosen === false){
             //     document.getElementById("liukangFighter").remove()  
     }
-        
+   
 })
+
+
+
 // subZero fighter selecter
     document.getElementById("subZeroFighterBox").addEventListener("click", function(){
         if(playerOnePick === false && subZeroChosen === false){
@@ -84,6 +104,8 @@ document.getElementById("liuKangFighterBox").addEventListener("click", function(
                 playerTwoPick = true; 
         }        
 })
+
+
 // scoropion Fighter selecter. 
         document.getElementById("scorpionFighterBox").addEventListener("click", function(){
             if(playerOnePick === false && subZeroChosen === false){
@@ -104,7 +126,6 @@ document.getElementById("liuKangFighterBox").addEventListener("click", function(
 var fightScene = function(){
 console.log("Prepare to Fight", fightScene);
     document.body.classList.replace("menu","fight");
-
 };
 
 var initGame = function (){
@@ -127,17 +148,15 @@ document.addEventListener("DOMContentLoaded", function(){
             character.addEventListener("click", selectCharacter)
         }
 
- 
 });
 
 
 
 function selectCharacter(e) {
-     
-        characterSelected.push(e.target);
+        console.log(e.target.id)
+        characterSelected.push(fighters[e.target.id]);
         console.log(characterSelected);
         if (characterSelected.length === 2) {
             initGame();
         }
-    
 }

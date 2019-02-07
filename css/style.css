@@ -23,21 +23,18 @@ header{
     width: 270px;
     height: auto;
     text-align:center;
-    border: 1px solid blue;
 }
 
 #subZero{
     width: 300px;
     height: auto;
     text-align: center;
-    border: 1px solid blue;
 } 
 
 #liuKang{
     width: 320px;
     height: auto; 
     text-align: center;
-    border: 1px solid blue;
 }
 
 .menu{
@@ -50,22 +47,20 @@ header{
     background-size: cover; 
 }
 
-.actionSelector{
+.playerOneButtonBox{
     text-align: center;
     border: 1px solid red; 
     width: 15em;
-    /* float: left;  */
     margin-top: 20vh;
-    display: none; 
+    display: inline-block; 
 }
 
-.actionSelectorTwo{ 
+.playerTwoButtonBox{ 
     text-align: center; 
     border: 1px solid red; 
     width: 15em;
-    /* float: right; */
     margin-top: 20vh;
-    display: none; 
+    display: inline-block; 
 }
 
 .Health{
