@@ -9,7 +9,6 @@ var subzeroFight = null;
 var liukangChosen = false;
 var liukangFight = null;
 
-
 var playerOneButton = null; 
 var playerOnePick = false;
 var playerOneBlock = null;
@@ -19,10 +18,42 @@ var playerTwoAttack = null;
 var playerTwoBlock = null 
 var playerTwoPick = false;
 
-var yourFighter = null;
-var myFighterSelect = null; 
+
+var yourFighterSelect = document.getElementById("yourFighterSelect")
+var myFighterSelect = document.getElementById("myFighterSelect")
 
 var characterSelected = []; 
+
+
+
+//end game conditions 
+function endGame(){
+    if (characterSelected[0].hp <= 0 && characterSelected[1].hp > 0){
+        myFighterSelect.style.borderColor = "red" 
+        yourFighterSelect.style.borderColor = "green"
+
+        //removing box from the battle arena 
+        document.getElementById("myFighterSelect").remove()
+        
+        console.log("player 1 loses")
+    } else if (characterSelected[0].hp > 0 && characterSelected[1].hp <= 0) {
+        yourFighterSelect.style.borderColor = "red" 
+        myFighterSelect.style.borderColor = "green"
+
+         //removing box from the battle arena 
+        document.getElementById("yourFighterSelect").remove()
+        console.log("player 2 loses")
+    } else if (characterSelected[0].hp === 0 && characterSelected[1].hp === 0 ){
+        yourFighterSelect.style.borderColor = "yellow"
+        myFighterSelect.style.borderColor = "yellow"
+        console.log("draw")
+    }
+    
+} 
+
+
+ 
+
 
 
 // liuKang object 
@@ -30,7 +61,7 @@ var liukangFighterObj = {
     player: 0, 
     name: "Liu Kang", 
     hp: 100, 
-    damage: 40,
+    damage: 100,
     block: 10,
     alive: true,
 
@@ -65,7 +96,7 @@ var  subZeroFighterObj = {
     player: 0, 
     name: "Sub Zero", 
     hp: 100,
-    damage: 30, 
+    damage: 100, 
     block: 10, 
     status: true,
 
@@ -100,7 +131,7 @@ var  scorpionFighterObj = {
     player: 0, 
     name: "Scorpion",
     hp: 100, 
-    damage: 30, 
+    damage: 100, 
     block: 10, 
     status: true,
 
@@ -127,19 +158,21 @@ var  scorpionFighterObj = {
     },
 
 }; 
-
+//hp checker. 
 function checkHp(){
     if (characterSelected[1].hp <= 0 ) {
-    characterSelected[1].hp = 0;
+            characterSelected[1].hp = 0;
 }   if (characterSelected[0].hp <= 0 ) {
-    characterSelected[0].hp = 0;
+            characterSelected[0].hp = 0;
+    
 } 
 }
 
-
+//battle function that allows player to select fight or block. 
 function battle(){
+    
     if(playerOneAttack && playerTwoAttack){
-            console.log("both player attacks")
+        console.log("both player attacked")
             playerOneAttack = null; 
             playerTwoAttack = null;
 
@@ -152,7 +185,7 @@ function battle(){
             
     } 
     if(playerOneAttack && playerTwoBlock){
-        console.log("p1 attack p2 block")
+        console.log("player 1 attacked player 2 blocked")
             playerOneAttack = null; 
             playerTwoBlock = null; 
             characterSelected[1].hp -=(characterSelected[0].damage - characterSelected[1].block)
@@ -162,7 +195,7 @@ function battle(){
             checkHp();
     }  
     if(playerOneBlock && playerTwoAttack){
-        console.log("p1 block and p2 attack")
+        console.log("player 1 blocked and p2 attacked")
             playerOneBlock = null; 
             playerTwoAttack = null;
             characterSelected[0].hp -=(characterSelected[1].damage - characterSelected[0].block)
@@ -180,6 +213,8 @@ function battle(){
 }}
 
 
+
+//hp function that dynamically changes the hp. 
 function hpChanger(){
     if(characterSelected[0].name==="Liu Kang"){
         document.getElementById("liuKangHealth").innerHTML = characterSelected[0].hp
@@ -188,7 +223,7 @@ function hpChanger(){
     }
     if(characterSelected[0].name==="Scorpion"){
         document.getElementById("scorpionHealth").innerHTML = characterSelected[0].hp
-    } else if (characterSelected[1].name==="Scorpion"){
+    } else if (characterSelected[1].name === "Scorpion"){
         document.getElementById("scorpionHealth").innerHTML = characterSelected[1].hp
     }
     if(characterSelected[0].name==="Sub Zero"){
@@ -199,32 +234,32 @@ function hpChanger(){
 
 }
 
-
-document.getElementById("battleBtn").addEventListener("click", function(){
-
+//Fight Button that enables both characters to attack after choice has been selected. 
+document.getElementById("battleBtn").addEventListener("click", function(){ 
     battle(); 
-    hpChanger()
+    hpChanger(); 
+    endGame();
 })
 
-
+//player one attack
 document.getElementById('playerOneAttack').addEventListener('click', function() {
     characterSelected[0].attacks()
    
     
 })
-
+//player one block 
 document.getElementById('playerOneBlock').addEventListener('click', function() {
     characterSelected[0].defend()
   
     
 })
-
+// player two attack
 document.getElementById('playerTwoAttack').addEventListener('click', function() {
     characterSelected[1].attacks()
   
     
 })
-
+//player two block 
 document.getElementById("playerTwoBlock").addEventListener('click', function() {
     characterSelected[1].defend()
   
@@ -232,7 +267,7 @@ document.getElementById("playerTwoBlock").addEventListener('click', function() {
 })
 
 
-//var that use
+
 var fighters = {
     liuKang: liukangFighterObj,
     subZero: subZeroFighterObj,
@@ -245,7 +280,7 @@ var fighters = {
 // liuKang fighter selecter
 document.getElementById("liuKangFighterBox").addEventListener("click", function(){
     if(playerOnePick === false && liukangChosen === false){
-        playerOnePick =true;
+        playerOnePick = true;
         liukangFighterObj.player = 1;
             document.getElementById("myFighterSelect").appendChild(document.getElementById("liuKangFighterBox"))
             liukangChosen = true; 
@@ -268,28 +303,31 @@ document.getElementById("liuKangFighterBox").addEventListener("click", function(
             subZeroFighterObj.player = 1; 
                 document.getElementById("myFighterSelect").appendChild(document.getElementById("subZeroFighterBox"))
                 subZeroChosen = true; 
+                console.log("sub zero has been chosen")
         }   else if (playerOnePick === true && playerTwoPick === false && subZeroChosen === false){
                 document.getElementById("yourFighterSelect").appendChild(document.getElementById("subZeroFighterBox"))                
                 playerTwoPick = true; 
-                subZeroFighterObj.player = 2; 
+                subZeroFighterObj.player = 2;
+                console.log("sub zero has been chosen")
         }        
 })
 
 
 // scoropion Fighter selecter. 
         document.getElementById("scorpionFighterBox").addEventListener("click", function(){
-            if(playerOnePick === false && subZeroChosen === false){
-                playerOnePick =true;
+            if (playerOnePick === false && scorpionChosen === false){
+                playerOnePick = true;
                 scorpionFighterObj.player = 1; 
                 console.log(scorpionFighterObj.player)
                     document.getElementById("myFighterSelect").appendChild(document.getElementById("scorpionFighterBox"))
-                    subZeroChosen = true; 
-            }   else if ( playerOnePick === true && playerTwoPick === false && subZeroChosen === false){
+                    scorpionChosen = true; 
+            } else if ( playerOnePick === true && playerTwoPick === false && scorpionChosen === false){
                     document.getElementById("yourFighterSelect").appendChild(document.getElementById("scorpionFighterBox"))                
                     playerTwoPick = true; 
                     scorpionFighterObj.player = 2; 
-                 console.log(scorpionFighterObj.player)   
-                 console.log(characterSelected)
+                console.log(scorpionFighterObj.player)   
+                console.log(characterSelected)
+                console.log("scorpion has been chosen")
                     //  if (playerOnePick === true && playerTwoPick === true && subZeroChosen === false){
                     //     document.getElementById("subZeroFighter").remove() }
             }
@@ -302,6 +340,7 @@ var fightScene = function(){
 console.log("Prepare to Fight", fightScene);
     document.body.classList.replace("menu","fight");
 };
+
 //removes the click function so person cannot click again, and then inits the fight scene
 var initGame = function (){
     console.log("game is started")
@@ -334,4 +373,4 @@ function selectCharacter(e) {
         if (characterSelected.length === 2) {
             initGame();
         }
-}
+}; 

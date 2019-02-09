@@ -14,14 +14,29 @@
 
 <body class ="menu"> 
 
+
+    
     <header>
         <h1> Mortal Kombat X </h1>
-    
+        
         <p> Player Vs Player Edition </p> 
-    
     </header>
+        
+     <div class = "playerOneButtonBox"> 
+            <button id ="playerOneAttack" class="combat">Kombat</button>
+            <button id="playerOneBlock">Block</button>
+    </div>
+            <button id="battleBtn">FIGHT</button>
+        
+    <div class = "playerTwoButtonBox"> 
+            <button id="playerTwoAttack">Kombat</button>
+            <button id="playerTwoBlock">Block</button>
+    </div>
+
+    
     
     <div id = "battleArena"> 
+
     <div id ="myFighterSelect"> Player 1</div> 
     <div id="yourFighterSelect"> Player 2</div>
     </div>
@@ -35,30 +50,22 @@
         </div>
         
         <div id = scorpionFighterBox>
-        <div id = "scorpionHeath"  class = "Health"> 100/100 </div>
+        <div id = "scorpionHealth"  class = "Health"> 100/100 </div>
                 <div id ="scorpionFighter"> <img id = "scorpion" class ="character" src= "./img/Scorpion.png"> </div> 
         </div>
         <div id = subZeroFighterBox>
         <div id = "subZeroHealth" class = "Health"> 100/100 </div> 
                 <div id="subZeroFighter"> <img id = "subZero"  class ="character" src= "./img/Subzero.png"></div>
         </div>
-        <div id="fightText"> FIGHT! </div>
+        <div id="fighterText"> </div>
         <div id="fatalityText"> Fatality </div>
+        
     </div>
 
 
 
     
-    <div class = "playerOneButtonBox"> 
-        <button id ="playerOneAttack" class="combat">Kombat</button>
-        <button id="playerOneBlock">Block</button>
-    </div>
-            <button id="battleBtn">FIGHT</button>
-
-    <div class = "playerTwoButtonBox"> 
-        <button id="playerTwoAttack">Kombat</button>
-        <button id="playerTwoBlock">Block</button>
-    </div>
+   
 
 </body>
 

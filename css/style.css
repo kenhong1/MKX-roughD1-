@@ -3,10 +3,12 @@ header{
     font-family: 'Rock Salt', cursive; 
     font-size: 15px;
     color:red; 
-    line-height: 1.7em;
+    line-height: 1.3em;
+    margin: 0 auto;
+
+
+
 }
-
-
 
 
 .characterSelectBox{ 
@@ -16,25 +18,34 @@ header{
 
 .characterSelectBox div{
     display: inline-block;
+    text-align: center;
+    margin: 0 auto;
 }
 
 
 #scorpion{
-    width: 270px;
+    width: 271px;
     height: auto;
     text-align:center;
+    display: inline-block;
+    margin: 0 auto;
+
 }
 
 #subZero{
-    width: 300px;
+    width: 306px;
     height: auto;
     text-align: center;
+    display: inline-block;
+    margin: 0 auto;
 } 
 
 #liuKang{
     width: 320px;
     height: auto; 
     text-align: center;
+    display: inline-block;
+    margin: 0 auto;
 }
 
 .menu{
@@ -47,20 +58,63 @@ header{
     background-size: cover; 
 }
 
-.playerOneButtonBox{
-    text-align: center;
-    border: 1px solid red; 
-    width: 15em;
-    margin-top: 20vh;
+
+
+
+.playerOneButtonBox{ 
+    margin: 0 auto;
     display: inline-block; 
+    text-align: center; 
+    position: relative;
+    margin-left: 64.5vh;
+    line-height: 5em;
+
 }
 
 .playerTwoButtonBox{ 
     text-align: center; 
-    border: 1px solid red; 
-    width: 15em;
     margin-top: 20vh;
     display: inline-block; 
+    position: relative;
+
+}
+
+
+
+#playerOneAttack{
+    font-family: 'Rock Salt', cursive;
+    background-color: black; 
+    color: red;
+    font-size: 15px;
+}
+
+#playerOneBlock{
+    font-family: 'Rock Salt', cursive;
+    background-color: black; 
+    color: red;
+    font-size: 15px;
+}
+
+#playerTwoAttack{
+    font-family: 'Rock Salt', cursive;
+    background-color: black; 
+    color: red;
+    font-size: 15px;
+
+}
+
+#playerTwoBlock{
+    font-family: 'Rock Salt', cursive;
+    background-color: black; 
+    color: red;
+    font-size: 15px;
+}
+
+#battleBtn{
+    font-family: 'Rock Salt', cursive;
+    background-color:red;
+    color:black;
+    font-size: 15px;
 }
 
 .Health{
@@ -71,25 +125,29 @@ header{
 }
 
 #myFighterSelect{
-    width: 25vw;
-    height: 50vh; 
+    width: 21vw;
+    height: 45vh; 
     display: left;
     text-align: left;
-    border: 1px solid red;
+    border: 5px solid yellow;
     color:white;  
     font-family: 'Rock Salt', cursive; 
     font-size: 15px;
+    margin: 0 auto;
+    position: relative;
 
 }
 #yourFighterSelect{
-    width: 25vw;
-    height: 50vh; 
+    width: 21vw;
+    height: 45vh; 
     display: left;
     text-align: left;
-    border: 1px solid red;
+    border: 5px solid yellow;
     color:white;  
     font-family: 'Rock Salt', cursive; 
     font-size: 15px;
+    margin: 0 auto;
+    position: relative;
     
 }
 #battleArena{
@@ -98,4 +156,16 @@ header{
     display: flex;
     justify-content: space-around;
     margin: 0 auto;
+    text-align: center;
+}
+
+
+#fighterText{
+    text-align: center;
+    margin: 0 auto;
+    display: inline-block;
+    font-family: 'Rock Salt', cursive; 
+    color: white;
+    font-size: 20px;
+    margin-top: 300px;
 }
